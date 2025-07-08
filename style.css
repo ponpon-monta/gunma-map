@@ -1,0 +1,327 @@
+/* ◆ ベースレイアウト ◆ */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Noto Sans JP", sans-serif;
+  background: linear-gradient(135deg, #c8ffe2a3 20%, #a8c6ff 100%) no-repeat fixed;
+  overflow-x: hidden;
+  margin-bottom: 50px;
+}
+
+.wrapper {
+  color: #555555;
+}
+/* ◆ marqee◆ */
+
+.marquee {
+  width: 100%;
+  border: 2px solid #555;
+  border-width: 1px 0px 1px 0px;
+  white-space: nowrap;
+  overflow: hidden;
+  background-color: #fff;
+
+}
+
+.marquee .track {
+  display: inline-block;
+  padding-left: 100%;
+  animation: scroll-left 15s linear infinite;
+}
+
+.marquee span {
+  font-size: 0.8rem;
+  line-height: 1.8;
+  align-items: center;
+}
+
+/* ◆ 横スクロールアニメーション ◆ */
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0)
+  }
+  100% {
+    transform: translateX(-100%)
+  }
+}
+
+/* ◆ メイン ◆ */
+
+.hero {
+  position: relative;
+  width: 100%;
+  padding: 10px 0;
+  /* 上下の余白 */
+  display: flex;
+  justify-content: center;
+}
+
+.hero p {
+    display: flex;
+    width: 200px;
+    height: 30px;
+    align-items: center;
+    justify-content: right;
+    padding-right: 15px;
+    line-height: 1;
+    border-radius: 20px;
+    background-color: #fff;
+    border: 1px solid #555555;
+    position: absolute;
+    top: 85%;
+    left: 15%;
+    transform: translateX(-50%);
+    font-size: 0.8rem;
+    z-index: 2;
+}
+
+/* 富士山画像 */
+
+.hero-img {
+  width: 100%;
+  border-radius: 24px;
+  display: block;
+  margin: 10% auto;
+  z-index: 1;
+  padding: 10% 0;
+}
+
+/* 地図 */
+
+.map {
+  position: relative;
+  background-color: #ffffff6b;
+  border-radius: 24px;
+  margin-top: 30%;
+}
+.label {
+  position: absolute;
+  font-weight: bold;
+  background: white;
+  border-radius: 7px;
+  padding: 2px 6px;
+  font-size: 0.8rem;
+}
+
+.maebashi {
+  top: 50%;
+  left: 40%;
+}
+
+.takasaki {
+  top: 60%;
+  left: 30%;
+}
+
+.kiryuu {
+  top: 55%;
+  left: 65%;
+}
+
+.shibukawa {
+  top: 38%;
+  left: 40%;
+}
+
+.numata {
+  top: 25%;
+  left: 50%;
+}
+
+.title-cute {
+    color: rgba(0,0,0,0);
+    font-family: "Noto Sans Japanese";
+    font-size: 10px;
+    font-weight: 0;
+    letter-spacing: 0.1em;
+    text-align: center;
+    -webkit-text-stroke: 0.4px #555;
+}
+.title-cute.maebashi {
+    text-shadow: 0.5px 0.5px #6172ff;
+  }
+.title-cute.takasaki {
+    text-shadow: 0.5px 0.5px #fff375;
+  }
+.title-cute.kiryuu {
+    text-shadow: 0.5px 0.5px #ff79b8;
+  }
+.title-cute.shibukawa {
+    text-shadow: 0.5px 0.5px #fdb560;
+  }
+.title-cute.numata {
+    text-shadow: 0.5px 0.5px #76c3ff;
+  }
+/* SVG */
+
+.title-svg {
+  position: absolute;
+  top: 0%;
+  left: 50%;
+  width: 100%;
+  transform: translateX(-50%);
+  z-index: 2;
+  /* 画像より手前に重ねる */
+}
+
+.subtitle-svg {
+  position: absolute;
+  top: 46%;
+  left: 74%;
+  width: 40%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
+/* ===== モーダル全体（section.modal） ===== */
+
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+/* ===== オーバーレイ ===== */
+
+.modal__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, .4);
+  opacity: 0;
+  transition: opacity .3s;
+}
+
+/* ===== モーダル本体（カード） ===== */
+
+.modal__card {
+  position: absolute;
+  /*  top: 10%;*/
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%, 100%);
+  width: 95%;
+  max-height: 92vh;
+  overflow-y: auto;
+  background: #fff;
+  border-radius: 24px 24px 0 0;
+  padding: 32px 24px 40px;
+  box-shadow: 0 -4px 16px rgba(0, 0, 0, .2);
+  transition: transform .65s cubic-bezier(.25, .8, .25, 1);
+  opacity: 0;
+}
+
+.modal.is-open .modal__card {
+  transform: translate(-50%, 0);
+  opacity: 1;
+}
+
+/* ★追加  開いた状態でも is-closing が付いたら下へ戻る */
+
+.modal.is-open.is-closing .modal__card {
+  transform: translate(-50%, 100%);
+  opacity: 0;
+}
+
+.modal.is-closing .modal__card {
+  transform: translate(-50%, 100%);
+  opacity: 0;
+}
+
+.modal.is-open .modal__overlay {
+  opacity: 1;
+}
+
+.modal.is-closing .modal__overlay {
+  opacity: 0;
+}
+
+.modal.is-open,
+.modal.is-closing {
+  pointer-events: auto;
+  visibility: visible;
+}
+
+/* ===== 閉じるボタン ===== */
+
+.modal__close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  font-size: 32px;
+  line-height: 1;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+/* ===== 装飾 ===== */
+
+.modal__title {
+  margin: 0 0 4px;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.modal__location {
+  margin: 0 0 16px;
+  font-size: 14px;
+  letter-spacing: .1em;
+}
+
+.modal__image img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.modal__text {
+  margin-top: 16px;
+  line-height: 1.6;
+}
+.emoji-btn {
+  position: absolute;
+  font-size: 18px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 10;
+}
+
+
+/* 小さな端末向け微調整 */
+
+@media screen and (max-width: 375px){
+  .modal__card {
+    padding: 24px 16px 32px;
+    font-size: 0.5rem;
+  }
+    .hero p {
+    margin: 5%;
+  }
+  .title-svg {
+    top: 0%;
+  }
+   .hero-img {
+    padding: 0;
+  }
+  .footer {
+    padding: 0;
+  }
+}
+
+/* フッター */
+
+.footer {
+  text-align: center;
+  font-size: 0.8rem;
+  padding: 1rem;
+  color: #555;
+  font-weight: 100;
+}
