@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>@ponpon.monta in 群馬</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="//fonts.googleapis.com/earlyaccess/notosansjapanese.css">
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const ua = navigator.userAgent.toLowerCase();
+      const isMobile = /iphone|android.*mobile|ipod/.test(ua); // スマホ判定
+      const isTablet = /ipad|android(?!.*mobile)/.test(ua); // タブレット判定
+
+      if (!isMobile) {
+        // スマホ以外（＝PC or タブレット）はブロック
+        document.body.innerHTML = `
+        <div style="text-align: center; margin-top: 20vh; font-family: sans-serif;">
+          <h1>このサイトはスマートフォン専用です📱</h1>
+          <p>スマートフォンからアクセスしてください🙏</p>
+        </div>
+      `;
+        document.body.style.background = "#fff";
+      }
+    });
+
+  </script>
+</head>
+
+<body>
+  <!-- ───── 横スクロールメッセージ ─────-->
+  <div class="marquee">
+    <div class="track">
+      <span>みんなヤッホー 😍 💕 群馬のオススメスポットを紹介するよ〜💕✨ 群馬に来たら行ってみてね〜🏔️💕　</span>
+    </div>
+  </div>
+  <div class="wrapper">
+    <!--メインコンテンツ-->
+    <main class="hero">
+      <img src="images/logo.svg" alt="" class="title-svg">
+      <div class="map">
+        <img src="images/gunnma.png" alt="群馬県の地図" class="hero-img">
+        <p>絵文字をタップしてね💕</p>
+        <button class="emoji-btn" data-modal-id="modal-waraku" style="top: 60%; left: 60%;">🍶</button>
+        <button class="emoji-btn" data-modal-id="modal-beeflab" style="top: 54%; left: 40%;">🍖</button>
+        <button class="emoji-btn" data-modal-id="modal-FanDalcuore" style="top: 65%; left: 35%;">🍴</button>
+        <button class="emoji-btn" data-modal-id="modal-mokkosu" style="top: 58%; left: 52%;">🍤</button>
+        <button class="emoji-btn" data-modal-id="modal-kaityourou" style="top: 35%; left: 33%;">♨️</button>
+        <button class="emoji-btn" data-modal-id="modal-hukiwarenotaki" style="top: 20%; left: 70%;">🏞</button>
+        <button class="emoji-btn" data-modal-id="modal-shibahama" style="top: 43%; left: 70%;">🍜</button>
+        <button class="emoji-btn" data-modal-id="modal-wabisabiya" style="top: 48%; left: 65%;">🍦</button>
+        <button class="emoji-btn" data-modal-id="modal-jutheburger" style="top: 48%; left: 75%;">🍔</button>
+        <button class="emoji-btn" data-modal-id="modal-Tiroir" style="top: 60%; left: 70%;">🍰</button>
+        <!-- ▼ 地名ロゴ -->
+        <div class="label maebashi title-cute">MAEBASHI</div>
+        <div class="label takasaki title-cute">TAKASAKI</div>
+        <div class="label kiryuu title-cute">KIRYUU</div>
+        <div class="label shibukawa title-cute">SHIBUKAWA</div>
+        <div class="label numata title-cute">NUMATA</div>
+      </div>
+    </main>
+    <!-- ───── モーダル ───── -->
+    <!-- 和楽モーダル -->
+    <section class="modal" aria-hidden="true" id="modal-waraku">
+      <div class="modal__overlay" data-modal-close></div>
+      <article class="modal__card">
+        <button class="modal__close" data-modal-close>&times;</button>
+        <h2 class="modal__title">🍶 肉と魚と酒　和楽</h2>
+        <p class="modal__location">📍 群馬県桐生市新宿1丁目4-35</p>
+        <figure class="modal__image"><img src="images/about.jpg" alt="和楽"></figure>
+        <p class="modal__text">おすすめラーメン店を紹介！</p>
+      </article>
+    </section>
+
+    <!-- ビーフラボモーダル -->
+    <section class="modal" aria-hidden="true" id="modal-beeflab">
+      <div class="modal__overlay" data-modal-close></div>
+      <article class="modal__card">
+        <button class="modal__close" data-modal-close>&times;</button>
+        <h2 class="modal__title">🍖 YAKINIKU Beef Laboratory</h2>
+        <p class="modal__location">📍 群馬県高崎市飯塚町381-1</p>
+        <figure class="modal__image"><img src="images/beer.jpg" alt="ビール"></figure>
+        <p class="modal__text">クラフトビールが楽しめるお店！</p>
+      </article>
+    </section>
+
+    <!-- ファンダルクオーレ　モーダル -->
+    <section class="modal" aria-hidden="true" id="modal-FanDalcuore">
+      <div class="modal__overlay" data-modal-close></div>
+      <article class="modal__card">
+        <button class="modal__close" data-modal-close>&times;</button>
+        <h2 class="modal__title">🍴 FAN×DALCUORE</h2>
+        <p class="modal__location">📍 群馬県高崎市竜見町10-8</p>
+        <figure class="modal__image"><img src="images/drop.jpg" alt="ケーキ"></figure>
+        <p class="modal__text">人気カフェで絶品ケーキ！</p>
+      </article>
+    </section>
+        <!-- もっこす　モーダル -->
+    <section class="modal" aria-hidden="true" id="modal-mokkosu">
+      <div class="modal__overlay" data-modal-close></div>
+      <article class="modal__card">
+        <button class="modal__close" data-modal-close>&times;</button>
+        <h2 class="modal__title">🍤 天ぷら もっこす</h2>
+        <p class="modal__location">📍 群馬県高崎市中大類町426-7</p>
+        <figure class="modal__image"><img src="images/drop.jpg" alt="ケーキ"></figure>
+        <p class="modal__text">人気カフェで絶品ケーキ！</p>
+      </article>
+    </section>
+        <!-- 諧暢楼　モーダル -->
+    <section class="modal" aria-hidden="true" id="modal-kaityourou">
+      <div class="modal__overlay" data-modal-close></div>
+      <article class="modal__card">
+        <button class="modal__close" data-modal-close>&times;</button>
+        <h2 class="modal__title">♨️ 奥伊香保 旅邸諧 暢楼</h2>
+        <p class="modal__location">📍 群馬県渋川市伊香保町伊香保香湯5−4</p>
+        <figure class="modal__image"><img src="images/drop.jpg" alt="ケーキ"></figure>
+        <p class="modal__text">人気カフェで絶品ケーキ！</p>
+      </article>
+    </section>
+        <!-- 吹割の滝　モーダル -->
+    <section class="modal" aria-hidden="true" id="modal-hukiwarenotaki">
+      <div class="modal__overlay" data-modal-close></div>
+      <article class="modal__card">
+        <button class="modal__close" data-modal-close>&times;</button>
+        <h2 class="modal__title">🏞 吹割の滝</h2>
+        <p class="modal__location">📍 群馬県沼田市利根町大字追貝</p>
+        <figure class="modal__image"><img src="images/drop.jpg" alt="ケーキ"></figure>
+        <p class="modal__text">人気カフェで絶品ケーキ！</p>
+      </article>
+    </section>
+        <!-- 芝浜　モーダル -->
+    <section class="modal" aria-hidden="true" id="modal-shibahama">
+      <div class="modal__overlay" data-modal-close></div>
+      <article class="modal__card">
+        <button class="modal__close" data-modal-close>&times;</button>
+        <h2 class="modal__title">🍜 ラーメン芝浜</h2>
+        <p class="modal__location">📍 群馬県桐生市相生町1丁目303-1</p>
+        <figure class="modal__image"><img src="images/drop.jpg" alt="ケーキ"></figure>
+        <p class="modal__text">人気カフェで絶品ケーキ！</p>
+      </article>
+    </section>
+        <!-- わびさびや　モーダル -->
+    <section class="modal" aria-hidden="true" id="modal-wabisabiya">
+      <div class="modal__overlay" data-modal-close></div>
+      <article class="modal__card">
+        <button class="modal__close" data-modal-close>&times;</button>
+        <h2 class="modal__title">🍦 わびさびや</h2>
+        <p class="modal__location">📍 群馬県桐生市新宿3丁目4−49</p>
+        <figure class="modal__image"><img src="images/drop.jpg" alt="ケーキ"></figure>
+        <p class="modal__text">人気カフェで絶品ケーキ！</p>
+      </article>
+    </section>
+        <!-- ジューザバーガー　モーダル -->
+    <section class="modal" aria-hidden="true" id="modal-jutheburger">
+      <div class="modal__overlay" data-modal-close></div>
+      <article class="modal__card">
+        <button class="modal__close" data-modal-close>&times;</button>
+        <h2 class="modal__title">🍔 ジューザバーガー</h2>
+        <p class="modal__location">📍 群馬県桐生市本町5丁目62</p>
+        <figure class="modal__image"><img src="images/drop.jpg" alt="ケーキ"></figure>
+        <p class="modal__text">人気カフェで絶品ケーキ！</p>
+      </article>
+    </section>
+        <!-- Tiroir　モーダル -->
+    <section class="modal" aria-hidden="true" id="modal-Tiroir">
+      <div class="modal__overlay" data-modal-close></div>
+      <article class="modal__card">
+        <button class="modal__close" data-modal-close>&times;</button>
+        <h2 class="modal__title">🍰 Tiroir</h2>
+        <p class="modal__location">📍 群馬県桐生市堤町2丁目5−2</p>
+        <figure class="modal__image"><img src="images/drop.jpg" alt="ケーキ"></figure>
+        <p class="modal__text">人気カフェで絶品ケーキ！</p>
+      </article>
+    </section>
+        <!-- ファンダルクオーレ　モーダル
+    <section class="modal" aria-hidden="true" id="modal-FanDalcuore">
+      <div class="modal__overlay" data-modal-close></div>
+      <article class="modal__card">
+        <button class="modal__close" data-modal-close>&times;</button>
+        <h2 class="modal__title">🍴 FAN×DALCUORE</h2>
+        <p class="modal__location">📍 群馬県高崎市竜見町10-8</p>
+        <figure class="modal__image"><img src="images/drop.jpg" alt="ケーキ"></figure>
+        <p class="modal__text">人気カフェで絶品ケーキ！</p>
+      </article>
+    </section> -->
+
+
+    <footer class="footer">@ponpon.monta All rights reserved.</footer>
+  </div>
+  <script src="js/modal.js" defer></script>
+
+</body>
+
+</html>
