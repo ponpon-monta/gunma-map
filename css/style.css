@@ -16,6 +16,7 @@ body {
 .wrapper {
   color: #555555;
 }
+
 /* ◆ marqee◆ */
 
 .marquee {
@@ -25,7 +26,8 @@ body {
   white-space: nowrap;
   overflow: hidden;
   background-color: #fff;
-
+  position: fixed;
+  bottom: 0;
 }
 
 .marquee .track {
@@ -63,22 +65,22 @@ body {
 }
 
 .hero p {
-    display: flex;
-    width: 200px;
-    height: 30px;
-    align-items: center;
-    justify-content: right;
-    padding-right: 15px;
-    line-height: 1;
-    border-radius: 20px;
-    background-color: #fff;
-    border: 1px solid #555555;
-    position: absolute;
-    top: 85%;
-    left: 15%;
-    transform: translateX(-50%);
-    font-size: 0.8rem;
-    z-index: 2;
+  display: flex;
+  width: 200px;
+  height: 30px;
+  align-items: center;
+  justify-content: right;
+  padding-right: 15px;
+  line-height: 1;
+  border-radius: 20px;
+  background-color: #fff;
+  border: 1px solid #555555;
+  position: absolute;
+  top: 85%;
+  left: 15%;
+  transform: translateX(-50%);
+  font-size: 0.8rem;
+  z-index: 2;
 }
 
 /* 富士山画像 */
@@ -100,6 +102,7 @@ body {
   border-radius: 24px;
   margin-top: 30%;
 }
+
 .label {
   position: absolute;
   font-weight: bold;
@@ -135,29 +138,35 @@ body {
 }
 
 .title-cute {
-    color: rgba(0,0,0,0);
-    font-family: "Noto Sans Japanese";
-    font-size: 10px;
-    font-weight: 0;
-    letter-spacing: 0.1em;
-    text-align: center;
-    -webkit-text-stroke: 0.4px #555;
+  color: rgba(0, 0, 0, 0);
+  font-family: "Noto Sans Japanese";
+  font-size: 10px;
+  font-weight: 0;
+  letter-spacing: 0.1em;
+  text-align: center;
+  -webkit-text-stroke: 0.4px #555;
 }
+
 .title-cute.maebashi {
-    text-shadow: 0.5px 0.5px #6172ff;
-  }
+  text-shadow: 0.5px 0.5px #6172ff;
+}
+
 .title-cute.takasaki {
-    text-shadow: 0.5px 0.5px #fff375;
-  }
+  text-shadow: 0.5px 0.5px #fff375;
+}
+
 .title-cute.kiryuu {
-    text-shadow: 0.5px 0.5px #ff79b8;
-  }
+  text-shadow: 0.5px 0.5px #ff79b8;
+}
+
 .title-cute.shibukawa {
-    text-shadow: 0.5px 0.5px #fdb560;
-  }
+  text-shadow: 0.5px 0.5px #fdb560;
+}
+
 .title-cute.numata {
-    text-shadow: 0.5px 0.5px #76c3ff;
-  }
+  text-shadow: 0.5px 0.5px #76c3ff;
+}
+
 /* SVG */
 
 .title-svg {
@@ -276,15 +285,38 @@ body {
   letter-spacing: .1em;
 }
 
-.modal__image img {
+.modal__carousel {
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  width: 100%;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 16px;
+  width: max-content;
+}
+
+.carousel-track img {
+  aspect-ratio: 1 / 1;
+  width: 80vw; /* スマホに収まるサイズ感 */
+  object-fit: cover;
+  scroll-snap-align: start;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+/*.modal__image img {
   width: 100%;
   border-radius: 8px;
-}
+}*/
 
 .modal__text {
   margin-top: 16px;
   line-height: 1.6;
 }
+
 .emoji-btn {
   position: absolute;
   font-size: 18px;
@@ -297,18 +329,18 @@ body {
 
 /* 小さな端末向け微調整 */
 
-@media screen and (max-width: 375px){
+@media screen and (max-width: 375px) {
   .modal__card {
     padding: 24px 16px 32px;
     font-size: 0.5rem;
   }
-    .hero p {
+  .hero p {
     margin: 5%;
   }
   .title-svg {
     top: 0%;
   }
-   .hero-img {
+  .hero-img {
     padding: 0;
   }
   .footer {
