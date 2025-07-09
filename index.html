@@ -31,12 +31,12 @@
 <body>
 
   <div class="wrapper">
-      <!-- ───── 横スクロールメッセージ ─────-->
-  <div class="marquee">
-    <div class="track">
-      <span>みんなヤッホー 😍 💕 群馬のオススメスポットを紹介するよ〜💕✨ 群馬に来たら行ってみてね〜🏔️💕　</span>
+    <!-- ───── 横スクロールメッセージ ─────-->
+    <div class="marquee">
+      <div class="track">
+        <span>みんなヤッホー 😍 💕 群馬のオススメスポットを紹介するよ〜💕✨ 群馬に来たら行ってみてね〜🏔️💕　</span>
+      </div>
     </div>
-  </div>
     <!--メインコンテンツ-->
     <main class="hero">
       <img src="images/logo.svg" alt="" class="title-svg">
@@ -69,7 +69,14 @@
         <button class="modal__close" data-modal-close>&times;</button>
         <h2 class="modal__title">🍶 肉と魚と酒　和楽</h2>
         <p class="modal__location">📍 群馬県桐生市新宿1丁目4-35</p>
-        <figure class="modal__image"><img src="images/about.jpg" alt="和楽"></figure>
+        <figure class="modal__carousel">
+          <div class="carousel-track">
+            <img src="images/1.png" alt="和楽1">
+            <img src="images/2.png" alt="和楽2">
+            <img src="images/27.png" alt="和楽3">
+          </div>
+        </figure>
+        <!--<figure class="modal__image"><img src="images/about.jpg" alt="和楽"></figure>-->
         <p class="modal__text">おすすめラーメン店を紹介！</p>
       </article>
     </section>
@@ -81,7 +88,17 @@
         <button class="modal__close" data-modal-close>&times;</button>
         <h2 class="modal__title">🍖 YAKINIKU Beef Laboratory</h2>
         <p class="modal__location">📍 群馬県高崎市飯塚町381-1</p>
-        <figure class="modal__image"><img src="images/beer.jpg" alt="ビール"></figure>
+        <figure class="modal__carousel">
+          <div class="carousel-track">
+            <img src="images/3.png" alt="ビーフラボラトリー1">
+            <img src="images/4.png" alt="ビーフラボラトリー2">
+            <img src="images/5.png" alt="ビーフラボラトリー3">
+            <img src="images/6.png" alt="ビーフラボラトリー6">
+            <img src="images/7.png" alt="ビーフラボラトリー7">
+            <img src="images/8.png" alt="ビーフラボラトリー8">
+            <img src="images/9.png" alt="ビーフラボラトリー9">
+          </div>
+        </figure>
         <p class="modal__text">クラフトビールが楽しめるお店！</p>
       </article>
     </section>
@@ -93,33 +110,68 @@
         <button class="modal__close" data-modal-close>&times;</button>
         <h2 class="modal__title">🍴 FAN×DALCUORE</h2>
         <p class="modal__location">📍 群馬県高崎市竜見町10-8</p>
-        <figure class="modal__image"><img src="images/drop.jpg" alt="ケーキ"></figure>
+        <figure class="modal__carousel">
+          <div class="carousel-track">
+            <img src="images/20.png" alt="ファンダルクオーレ20">
+            <img src="images/19.png" alt="ファンダルクオーレ19">
+            <img src="images/18.png" alt="ファンダルクオーレ18">
+            <img src="images/17.png" alt="ファンダルクオーレ17">
+            <img src="images/16.png" alt="ファンダルクオーレ16">
+            <img src="images/15.png" alt="ファンダルクオーレ15">
+            <img src="images/14.png" alt="ファンダルクオーレ14">
+            <img src="images/13.png" alt="ファンダルクオーレ13">
+            <img src="images/12.png" alt="ファンダルクオーレ12">
+            <img src="images/11.png" alt="ファンダルクオーレ11">
+            <img src="images/10.png" alt="ファンダルクオーレ10">
+          </div>
+        </figure>
         <p class="modal__text">人気カフェで絶品ケーキ！</p>
       </article>
     </section>
-        <!-- もっこす　モーダル -->
+    <!-- もっこす　モーダル -->
     <section class="modal" aria-hidden="true" id="modal-mokkosu">
       <div class="modal__overlay" data-modal-close></div>
       <article class="modal__card">
         <button class="modal__close" data-modal-close>&times;</button>
         <h2 class="modal__title">🍤 天ぷら もっこす</h2>
         <p class="modal__location">📍 群馬県高崎市中大類町426-7</p>
-        <figure class="modal__image"><img src="images/drop.jpg" alt="ケーキ"></figure>
+        <figure class="modal__carousel">
+          <div class="carousel-track">
+            <img src="images/21.png" alt="もっこす21">
+            <img src="images/22.png" alt="もっこす22">
+            <img src="images/23.png" alt="もっこす23">
+            <img src="images/24.png" alt="もっこす24">
+            <img src="images/25.png" alt="もっこす25">
+            <img src="images/26.png" alt="もっこす26">
+          </div>
+        </figure>
         <p class="modal__text">人気カフェで絶品ケーキ！</p>
       </article>
     </section>
-        <!-- 諧暢楼　モーダル -->
+    <!-- 諧暢楼　モーダル -->
     <section class="modal" aria-hidden="true" id="modal-kaityourou">
       <div class="modal__overlay" data-modal-close></div>
       <article class="modal__card">
         <button class="modal__close" data-modal-close>&times;</button>
-        <h2 class="modal__title">♨️ 奥伊香保 旅邸諧 暢楼</h2>
+        <h2 class="modal__title">♨️ 奥伊香保 旅邸 諧暢楼</h2>
         <p class="modal__location">📍 群馬県渋川市伊香保町伊香保香湯5−4</p>
-        <figure class="modal__image"><img src="images/drop.jpg" alt="ケーキ"></figure>
+        <figure class="modal__carousel">
+          <div class="carousel-track">
+            <img src="images/36.png" alt="諧暢楼36">
+            <img src="images/28.png" alt="諧暢楼28">
+            <img src="images/29.png" alt="諧暢楼29">
+            <img src="images/30.png" alt="諧暢楼30">
+            <img src="images/31.png" alt="諧暢楼31">
+            <img src="images/32.png" alt="諧暢楼32">
+            <img src="images/33.png" alt="諧暢楼33">
+            <img src="images/34.png" alt="諧暢楼34">
+            <img src="images/35.png" alt="諧暢楼35">
+          </div>
+        </figure>
         <p class="modal__text">人気カフェで絶品ケーキ！</p>
       </article>
     </section>
-        <!-- 吹割の滝　モーダル -->
+    <!-- 吹割の滝　モーダル -->
     <section class="modal" aria-hidden="true" id="modal-hukiwarenotaki">
       <div class="modal__overlay" data-modal-close></div>
       <article class="modal__card">
@@ -130,7 +182,7 @@
         <p class="modal__text">人気カフェで絶品ケーキ！</p>
       </article>
     </section>
-        <!-- 芝浜　モーダル -->
+    <!-- 芝浜　モーダル -->
     <section class="modal" aria-hidden="true" id="modal-shibahama">
       <div class="modal__overlay" data-modal-close></div>
       <article class="modal__card">
@@ -141,7 +193,7 @@
         <p class="modal__text">人気カフェで絶品ケーキ！</p>
       </article>
     </section>
-        <!-- わびさびや　モーダル -->
+    <!-- わびさびや　モーダル -->
     <section class="modal" aria-hidden="true" id="modal-wabisabiya">
       <div class="modal__overlay" data-modal-close></div>
       <article class="modal__card">
@@ -152,7 +204,7 @@
         <p class="modal__text">人気カフェで絶品ケーキ！</p>
       </article>
     </section>
-        <!-- ジューザバーガー　モーダル -->
+    <!-- ジューザバーガー　モーダル -->
     <section class="modal" aria-hidden="true" id="modal-jutheburger">
       <div class="modal__overlay" data-modal-close></div>
       <article class="modal__card">
@@ -163,18 +215,22 @@
         <p class="modal__text">人気カフェで絶品ケーキ！</p>
       </article>
     </section>
-        <!-- Tiroir　モーダル -->
+    <!-- Tiroir　モーダル -->
     <section class="modal" aria-hidden="true" id="modal-Tiroir">
       <div class="modal__overlay" data-modal-close></div>
       <article class="modal__card">
         <button class="modal__close" data-modal-close>&times;</button>
         <h2 class="modal__title">🍰 Tiroir</h2>
         <p class="modal__location">📍 群馬県桐生市堤町2丁目5−2</p>
-        <figure class="modal__image"><img src="images/drop.jpg" alt="ケーキ"></figure>
+        <figure class="modal__carousel">
+          <div class="carousel-track">
+            <img src="images/37.png" alt="Tiroir37">
+          </div>
+        </figure>
         <p class="modal__text">人気カフェで絶品ケーキ！</p>
       </article>
     </section>
-        <!-- ファンダルクオーレ　モーダル
+    <!-- ファンダルクオーレ　モーダル
     <section class="modal" aria-hidden="true" id="modal-FanDalcuore">
       <div class="modal__overlay" data-modal-close></div>
       <article class="modal__card">
